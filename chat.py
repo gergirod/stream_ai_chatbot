@@ -22,7 +22,7 @@ def get_response(user_query, chat_history):
 
     prompt = ChatPromptTemplate.from_template(template)
 
-    llm = ChatOpenAI()
+    llm = ChatOpenAI(openai_api_key = st.secrets["OPENAI_API_KEY"])
         
     chain = prompt | llm | StrOutputParser()
     
